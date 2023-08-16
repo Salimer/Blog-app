@@ -18,4 +18,10 @@ RSpec.describe Post, type: :model do
       Donec quam felis, ultricies neln ea' # 251 chars
       expect(subject).to_not be_valid
     end
+
+    it 'comments_counter should be integer' do
+      subject.comments_counter = 'hey'
+      expect(subject).to_not be_valid
+    end
+
 end
