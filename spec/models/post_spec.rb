@@ -46,6 +46,17 @@ RSpec.describe Post, type: :model do
   end
 
   describe '#update_user_posts_counter' do
+    it 'updates the user posts_counter attribute' do
+      # Arrange
+      user = User.create(name: 'Sam')
+      post = Post.create(title: 'Hello', author: user)
+
+      # Act
+      post.update_user_posts_counter
+
+      # Assert
+      expect(user.reload.posts_counter).to eq(1)
+    end
   end
 
 end
