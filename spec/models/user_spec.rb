@@ -25,5 +25,18 @@ RSpec.describe User, type: :model do
   end
 
   describe '#three_most_recent_posts' do
+    it 'returns the 3 most recent posts' do
+      # Arrange
+      user = User.create(name: 'Salim')
+      post1 = Post.create(title: 'post1', author: user, created_at: 4.day.ago)
+      post2 = Post.create(title: 'post2', author: user, created_at: 3.day.ago)
+      post3 = Post.create(title: 'post3', author: user, created_at: 2.day.ago)
+
+      # Act
+      reecent_posts = user.three_most_recent_posts
+
+      # Assert
+      expect(reecent_posts).to eq([post3, post2, post1])
+    end
   end
 end
