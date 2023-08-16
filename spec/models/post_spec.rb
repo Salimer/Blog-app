@@ -5,6 +5,7 @@ RSpec.describe Post, type: :model do
 
   before { subject.save }
 
+  describe 'validation tests' do
     it 'title should be present' do
       subject.title = nil
       expect(subject).to_not be_valid
@@ -42,4 +43,6 @@ RSpec.describe Post, type: :model do
       subject.likes_counter = 0
       expect(subject).to be_valid
     end
+  end
+
 end
