@@ -5,4 +5,6 @@ RSpec.describe User, type: :model do
 
   before { subject.save }
 
+  describe 'validation tests' do
+  end
 end
