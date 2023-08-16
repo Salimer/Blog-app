@@ -45,4 +45,7 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe '#update_user_posts_counter' do
+  end
+
 end
