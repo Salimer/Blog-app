@@ -59,4 +59,6 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe '#five_most_recent_comments' do
+  end
 end
