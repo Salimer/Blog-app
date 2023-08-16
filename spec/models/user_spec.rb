@@ -23,4 +23,7 @@ RSpec.describe User, type: :model do
       expect(subject).to be_valid
     end
   end
+
+  describe '#three_most_recent_posts' do
+  end
 end
