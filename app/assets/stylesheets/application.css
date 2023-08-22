@@ -78,3 +78,8 @@ a {
   justify-content: center;
 }
 
+#pagination {
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
