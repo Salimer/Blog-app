@@ -9,3 +9,8 @@
 <p><%= @post.text %></p>
 <h3>Comments:</h3>
 <% @post.comments.each do |comment| %>
+<div class="post-comments">
+    <span><%= comment.author.name %>:</span>
+    <span><%= comment.text %></span>
+</div>
+<% end %>
