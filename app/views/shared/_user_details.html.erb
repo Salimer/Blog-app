@@ -2,4 +2,7 @@
     <div class="user-name">
         <%= user.name %>
     </div>
+    <div class=posts-count">
+        <%= pluralize(user.posts.count, 'post') %>
+    </div>
 </div>
