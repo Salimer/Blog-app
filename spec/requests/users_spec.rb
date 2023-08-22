@@ -22,6 +22,9 @@ RSpec.describe 'UsersController', type: :request do
   end
 
   describe 'GET #show' do
+    before do
+      get user_path(user)
+    end
     end
   end
 end
