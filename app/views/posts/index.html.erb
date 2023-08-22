@@ -1,4 +1,6 @@
-<h1><%= @user.name%>'s Posts</h1>
+<a href="<%= users_path() %>">
+    <button id="back-btn">⬅</button>
+</a>
 <ul>
     <% @posts.each do |post|%>
         <li>post_id: <%= post.id %>
