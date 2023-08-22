@@ -21,5 +21,8 @@ RSpec.describe 'PostsController', type: :request do
       end
     end
   end
+
+  describe 'GET #show' do
+    end
   end
 end
