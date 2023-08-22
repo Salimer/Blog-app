@@ -22,3 +22,9 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.user-box {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
