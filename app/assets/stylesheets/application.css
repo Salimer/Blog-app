@@ -28,3 +28,8 @@ a {
   margin-bottom: 1rem;
 }
 
+.user-photo {
+  width: 4rem;
+  background-color: black;
+  border-radius: 5px;
+}
