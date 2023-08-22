@@ -23,6 +23,9 @@ RSpec.describe 'PostsController', type: :request do
   end
 
   describe 'GET #show' do
+    before do
+      get user_post_path(user, post)
+    end
     end
   end
 end
