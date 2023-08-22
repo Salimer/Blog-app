@@ -4,6 +4,8 @@ RSpec.describe 'UsersController', type: :request do
   let(:user) { User.create(name: 'Test User') }
 
   describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+    before do
+      get users_path
+    end
   end
 end
