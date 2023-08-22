@@ -25,6 +25,8 @@ RSpec.describe 'UsersController', type: :request do
     before do
       get user_path(user)
     end
+
+    context 'renders the show template' do
     end
   end
 end
