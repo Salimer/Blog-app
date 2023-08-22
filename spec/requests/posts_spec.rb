@@ -5,6 +5,8 @@ RSpec.describe 'PostsController', type: :request do
   let(:post) { Post.create(author: user, title: 'Test Post') }
 
   describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+    before do
+      get user_posts_path(user)
+    end
   end
 end
