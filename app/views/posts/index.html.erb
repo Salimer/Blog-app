@@ -19,4 +19,15 @@
                         <span>Likes: <%= post.likes_counter %></span>
                     </div>
                 </div>
+                <h3>Comments:</h3>
+                <% post.comments.each_with_index do |comment, index| %>
+                <% break if index >= 3 %>
+                <div class="post-comments">
+                    <span><%= comment.author.name %>:</span>
+                    <span><%= comment.text %></span>
+                </div>
+                <% end %>
+            </div>
+        </a>
+    <% end %>
 </ul>
