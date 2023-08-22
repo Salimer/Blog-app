@@ -20,5 +20,8 @@ RSpec.describe 'UsersController', type: :request do
       end
     end
   end
+
+  describe 'GET #show' do
+    end
   end
 end
