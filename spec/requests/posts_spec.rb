@@ -8,5 +8,8 @@ RSpec.describe 'PostsController', type: :request do
     before do
       get user_posts_path(user)
     end
+
+    context 'renders the index template' do
+  end
   end
 end
