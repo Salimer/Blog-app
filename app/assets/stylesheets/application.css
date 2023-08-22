@@ -61,3 +61,8 @@ a {
   margin-bottom: 1rem;
 }
 
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
