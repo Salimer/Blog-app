@@ -33,3 +33,15 @@ a {
   background-color: black;
   border-radius: 5px;
 }
+
+.user-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  margin-left: 0.5rem;
+}
