@@ -2,9 +2,11 @@
     <button id="back-btn">⬅</button>
 </a>
 <ul>
+    <a href="<%= user_path(@user) %>">
+        <div class="user-box">
+            <%= render partial: 'shared/user_photo', locals: { user: @user } %>
+            <%= render partial: 'shared/user_details', locals: { user: @user } %>
+        </div>
+    </a>
     <% @posts.each do |post|%>
-        <li>post_id: <%= post.id %>
-        <span>post_title: <%= post.title %></span>
-        </li>
-        <% end %>
 </ul>
