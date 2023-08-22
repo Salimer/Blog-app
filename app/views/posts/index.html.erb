@@ -1,8 +1,35 @@
-<h1><%= @user.name%>'s Posts</h1>
+<a href="<%= users_path() %>">
+    <button id="back-btn">⬅</button>
+</a>
 <ul>
+    <a href="<%= user_path(@user) %>">
+        <div class="user-box">
+            <%= render partial: 'shared/user_photo', locals: { user: @user } %>
+            <%= render partial: 'shared/user_details', locals: { user: @user } %>
+        </div>
+    </a>
     <% @posts.each do |post|%>
-        <li>post_id: <%= post.id %>
-        <span>post_title: <%= post.title %></span>
-        </li>
-        <% end %>
+        <a href="<%= user_post_path(@user, post) %>">
+            <div class="user-post">
+                <div class="post">
+                    <h3>Post <%= raw "#" + post.id.to_s %></h3>
+                    <p><%= post.text %></p>
+                    <div class='post-interactions'>
+                        <span>Comments: <%= post.comments_counter %>,</span>
+                        <span>Likes: <%= post.likes_counter %></span>
+                    </div>
+                </div>
+                <h3>Comments:</h3>
+                <% post.five_most_recent_comments.each do |comment, index| %>
+                <div class="post-comments">
+                    <span><%= comment.author.name %>:</span>
+                    <span><%= comment.text %></span>
+                </div>
+                <% end %>
+            </div>
+        </a>
+    <% end %>
+    <a href="<%= users_path() %>" class='pagination'>
+        <button id='pagination'>pagination</button>
+    </a>
 </ul>

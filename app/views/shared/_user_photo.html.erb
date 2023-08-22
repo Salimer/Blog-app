@@ -1,0 +1,9 @@
+<% if user.photo.present? %>
+    <div class="user-photo">
+        <%= image_tag user.photo, alt: user.name %>
+    </div>
+<% else %>
+    <div class="user-photo placeholder">
+        No photo
+    </div>
+<% end %>

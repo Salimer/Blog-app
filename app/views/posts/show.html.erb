@@ -1,2 +1,16 @@
-<h1>Post number <%= @post.id %> of User <%= @user.name %> </h1>
-<li><%= @post.title %></li>
+<a href="<%= user_posts_path() %>">
+    <button id="back-btn">⬅</button>
+</a>
+<h2>Post <%= "#" + @post.id.to_s %> by <%= @user.name %></h2>
+<div class='post-interactions'>
+    <span>Comments: <%= @post.comments_counter %>,</span>
+    <span>Likes: <%= @post.likes_counter %></span>
+</div>
+<p><%= @post.text %></p>
+<h3>Comments:</h3>
+<% @post.comments.each do |comment| %>
+<div class="post-comments">
+    <span><%= comment.author.name %>:</span>
+    <span><%= comment.text %></span>
+</div>
+<% end %>
