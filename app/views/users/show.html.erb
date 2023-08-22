@@ -11,7 +11,7 @@
         <%= @user.bio %>
     </p>
 </div>
-<% @user.posts.each do |post| %>
+<% @three_recent_posts.each do |post| %>
     <div class="post bio">
         <h3>Post <%= raw "#" + post.id.to_s %></h3>
         <p><%= post.text %></p>
