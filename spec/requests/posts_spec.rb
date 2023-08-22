@@ -26,6 +26,8 @@ RSpec.describe 'PostsController', type: :request do
     before do
       get user_post_path(user, post)
     end
+
+    context 'renders the show template' do
     end
   end
 end
