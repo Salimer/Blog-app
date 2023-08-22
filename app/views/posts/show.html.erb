@@ -6,3 +6,6 @@
     <span>Comments: <%= @post.comments_counter %>,</span>
     <span>Likes: <%= @post.likes_counter %></span>
 </div>
+<p><%= @post.text %></p>
+<h3>Comments:</h3>
+<% @post.comments.each do |comment| %>
