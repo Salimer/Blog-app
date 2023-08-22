@@ -9,6 +9,9 @@ RSpec.describe 'UsersController', type: :request do
     end
 
     context 'renders the index template' do
+      it 'response status is correct' do
+        expect(response).to have_http_status(200)
+      end
   end
   end
 end
