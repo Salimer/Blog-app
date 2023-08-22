@@ -31,6 +31,9 @@ RSpec.describe 'PostsController', type: :request do
       it 'response status is correct' do
         expect(response).to have_http_status(200)
       end
+      it 'correct template is rendered' do
+        expect(response).to render_template(:show)
+      end
     end
   end
 end
