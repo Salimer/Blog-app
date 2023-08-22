@@ -7,5 +7,8 @@ RSpec.describe 'UsersController', type: :request do
     before do
       get users_path
     end
+
+    context 'renders the index template' do
+  end
   end
 end
