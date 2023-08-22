@@ -1,2 +1,4 @@
-<h1>Post number <%= @post.id %> of User <%= @user.name %> </h1>
-<li><%= @post.title %></li>
+<a href="<%= user_posts_path() %>">
+    <button id="back-btn">⬅</button>
+</a>
+<h2>Post <%= "#" + @post.id.to_s %> by <%= @user.name %></h2>
