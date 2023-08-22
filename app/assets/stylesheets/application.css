@@ -66,3 +66,10 @@ a {
   flex-direction: column;
 }
 
+.post-interactions {
+  display: flex;
+  font-size: small;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
