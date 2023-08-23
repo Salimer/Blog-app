@@ -43,10 +43,12 @@ class PostsController < ApplicationController
   end
 
   def find_post
-    @post = @user.posts.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    # Handle the situation when the post is not found
-    flash[:alert] = 'Post not found, back to posts page'
-    redirect_to user_posts_path(@user)
+    @post = @user.posts.find_by(id: params[:id])
+    if @post.nil?
+      flash[:alert] = 'Post not found, back to posts page'
+      redirect_to user_posts_path(@user)
+    end
+  end
+
   end
 end
