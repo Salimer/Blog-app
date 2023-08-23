@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_user, only: %i[index show like unlike]
-  before_action :find_post, only: [:show, :like, :unlike]
+  before_action :find_post, only: %i[show like unlike]
 
   def index
     @posts = @user.posts
@@ -24,15 +24,15 @@ class PostsController < ApplicationController
   end
 
   def like
-    @like = @post.likes.new()
+    @like = @post.likes.new
     @like.author = current_user
     @like.save
     redirect_to user_post_path(@user, @post)
   end
-  
+
   def unlike
     @like = @post.likes.find_by(post: @post) # Find the like
-    @like.destroy if @like # Destroy the like if found
+    @like&.destroy # Destroy the like if found
     redirect_to user_post_path(@user, @post)
   end
 
@@ -44,10 +44,10 @@ class PostsController < ApplicationController
 
   def find_post
     @post = @user.posts.find_by(id: params[:id])
-    if @post.nil?
-      flash[:alert] = 'Post not found, back to posts page'
-      redirect_to user_posts_path(@user)
-    end
+    return unless @post.nil?
+
+    flash[:alert] = 'Post not found, back to posts page'
+    redirect_to user_posts_path(@user)
   end
 
   def post_params
