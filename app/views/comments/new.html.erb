@@ -5,3 +5,13 @@
 <h2>Post <%= @post.id %></h2>
 <h2>Current User <%= @user.name %></h2>
 
+<%= form_with model: @comment, url: user_post_comments_path(@user, @post), local: true do |form| %>
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Comment' %>
+  </div>
+<% end %>
