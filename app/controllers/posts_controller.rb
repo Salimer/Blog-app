@@ -23,6 +23,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def like
+    @like = @post.likes.new()
+    @like.author = current_user
+    @like.save
+    redirect_to user_post_path(@user, @post)
+  end
+  
 
   def find_user
     @user = User.find(params[:user_id])
