@@ -20,3 +20,6 @@
   <span><%= comment.text %></span>
 </div>
 <% end %>
+<a href="<%= new_user_post_comment_path(@user, @post) %>">
+  <button id="back-btn">Add a comment</button>
+</a>
