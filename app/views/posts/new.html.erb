@@ -1,0 +1,19 @@
+<a href="<%= user_path(@user) %>">
+  <button id="back-btn">⬅</button>
+</a>
+<h1>Create a New Post</h1>
+<%= form_with model: [@user, @post], local: true do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Post' %>
+  </div>
+<% end %>
