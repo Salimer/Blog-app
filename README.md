@@ -33,7 +33,7 @@
 ## 🛠 Built With <a name="built-with"></a>
 <h2> Tech Stack </h2>
 - Ruby on Rails
-- PSQL
+- POSTGRES
 
 <!-- Features -->
 
