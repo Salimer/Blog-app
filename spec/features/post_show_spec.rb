@@ -86,4 +86,21 @@ RSpec.feature "Post Show", type: :feature do
     expect(page).to have_content("Salim")
   end
 
+  scenario 'see the username of each commentor' do
+    user = User.create(name: 'Tom')
+    user2 = User.create(name: 'Ali')
+    user3 = User.create(name: 'Salim')
+    post = Post.create(author: user, title: "first post's title")
+    comment1 = Comment.create(author: user, post: post, text: 'first comment')
+    comment2 = Comment.create(author: user, post: post, text: 'second comment')
+    comment3 = Comment.create(author: user3, post: post, text: 'third comment')
+    comment4 = Comment.create(author: user, post: post, text: 'fourth comment')
+    comment5 = Comment.create(author: user2, post: post, text: 'fifth comment')
+    comment6 = Comment.create(author: user, post: post, text: 'last comment')
+
+    visit user_post_path(user, post)
+
+    expect(page).to have_content("first comment")
+    expect(page).to have_content("last comment")
+  end
 end
