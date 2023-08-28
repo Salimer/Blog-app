@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "User Index", type: :feature do
   scenario 'visiting the user index page' do
-    user1 = User.create(name: 'Tom')
-    user2 = User.create(name: 'Ali')
+    user1 = User.create(name: 'Tom', photo: 'https://www.kasandbox.org/programming-images/avatars/leaf-blue.png')
+    user2 = User.create(name: 'Ali', photo: 'https://www.kasandbox.org/programming-images/avatars/leaf-blue.png')
 
     visit users_path
 
