@@ -7,7 +7,7 @@ class Like < ApplicationRecord
   after_save :increment_post_likes_counter
   after_destroy :decrement_post_likes_counter
 
-  # Methods  
+  # Methods
   def increment_post_likes_counter
     post.increment!(:likes_counter)
   end
