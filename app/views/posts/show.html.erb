@@ -14,7 +14,6 @@
     <%= button_to "Unlike", unlike_user_post_path(@user, @post), method: :delete, remote: true %>
   </div>
 <% end %>
-<p><%= @post.text %></p>
 <h3>Comments:</h3>
 <% @post.comments.each do |comment| %>
 <div class="post-comments">
