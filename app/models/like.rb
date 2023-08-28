@@ -4,8 +4,8 @@ class Like < ApplicationRecord
   belongs_to :post, class_name: 'Post'
 
   # Callbacks
-  after_save :update_post_likes_counter
-  after_destroy :update_post_likes_counter
+  after_save :increment_post_likes_counter
+  after_destroy :decrement_post_likes_counter
 
   # Methods
   def update_post_likes_counter
