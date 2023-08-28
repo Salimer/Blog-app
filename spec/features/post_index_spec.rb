@@ -94,4 +94,15 @@ RSpec.feature "Post Index", type: :feature do
     expect(page).to have_content("Likes: 6")
   end
 
+  scenario 'see how many likes a post has' do
+    user = User.create(name: 'Tom')
+    post = Post.create(author: user, title: "first post's title")
+    comment = Comment.create(author: user, post: post, text: 'first comment')
+    like = Like.create(author: user, post: post)
+
+    visit user_posts_path(user)
+
+    expect(page).to have_content("Pagination")
+  end
+
 end
