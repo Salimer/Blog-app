@@ -6,7 +6,7 @@ RSpec.describe Comment, type: :model do
       # Arrange
       user = User.create(name: 'Sam')
       post = Post.create(title: 'Hello', author: user)
-      comment = Comment.create(author: user, post:)
+      Comment.create(author: user, post:)
 
       # Assert
       expect(post.reload.comments_counter).to eq(1)

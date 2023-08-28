@@ -49,7 +49,7 @@ RSpec.describe Post, type: :model do
     it 'updates the user posts_counter attribute' do
       # Arrange
       user = User.create(name: 'Sam')
-      post = Post.create(title: 'Hello', author: user)
+      Post.create(title: 'Hello', author: user)
 
       # Assert
       expect(user.reload.posts_counter).to eq(1)
