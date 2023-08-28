@@ -10,4 +10,13 @@ RSpec.feature "Post Show", type: :feature do
     expect(page).to have_content("first post's title")
   end
 
+  scenario 'see who wrote the post' do
+    user = User.create(name: 'Tom')
+    post = Post.create(author: user, title: "first post's title")
+
+    visit user_post_path(user, post)
+
+    expect(page).to have_content("by Tom")
+  end
+
 end
