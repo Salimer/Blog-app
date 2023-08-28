@@ -21,4 +21,13 @@ RSpec.feature "Post Index", type: :feature do
     expect(page).to have_content("3 posts")
   end
 
+  scenario 'see the title of the post' do
+    user = User.create(name: 'Tom')
+    post1 = Post.create(author: user, title: "first post's title")
+
+    visit user_posts_path(user)
+
+    expect(page).to have_content("first post's title")
+  end
+
 end
