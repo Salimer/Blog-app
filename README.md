@@ -100,6 +100,11 @@ To run tests, run the following command:
 👤 **Salim Bamahfoodh**
 
 - GitHub: [@salimer](https://github.com/salimer)
+
+👤 **Alishah**
+
+- GitHub: [AliShahSafdari](https://github.com/AliShahSafdari)
+- LinkedIn: [AlishahSafdari](https://www.linkedin.com/in/alishahsafdari/)
 <!-- - LinkedIn: [username](link) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
