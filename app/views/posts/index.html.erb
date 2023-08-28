@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <h3>Comments:</h3>
-                <% post.five_most_recent_comments.each do |comment, index| %>
+                <% post.five_most_recent_comments.each do |comment| %>
                 <div class="post-comments">
                     <span><%= comment.author.name %>:</span>
                     <span><%= comment.text %></span>
