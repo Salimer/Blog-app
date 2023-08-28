@@ -14,8 +14,11 @@ RSpec.feature "User Index", type: :feature do
   end
 
   scenario 'visiting the user index page, you see the number of posts each user has written..' do
-    user1 = User.create(name: 'Tom', posts_counter: 2 )
-    user2 = User.create(name: 'Ali', posts_counter: 1 )
+    user1 = User.create(name: 'Tom')
+    user2 = User.create(name: 'Ali')
+    post1 = Post.create(author: user1, title: 'first post')
+    post2 = Post.create(author: user1, title: 'second post')
+    post3 = Post.create(author: user1, title: 'third post')
 
     visit users_path
 
