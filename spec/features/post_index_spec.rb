@@ -49,4 +49,19 @@ RSpec.feature "Post Index", type: :feature do
     expect(page).not_to have_content(body)
   end
 
+  scenario 'see the first comments' do
+    user = User.create(name: 'Tom')
+    post = Post.create(author: user, title: "first post's title")
+    comment1 = Comment.create(author: user, post: post, text: 'first comment')
+    comment2 = Comment.create(author: user, post: post, text: 'second comment')
+    comment3 = Comment.create(author: user, post: post, text: 'third comment')
+    comment4 = Comment.create(author: user, post: post, text: 'fourth comment')
+    comment5 = Comment.create(author: user, post: post, text: 'fifth comment')
+    comment6 = Comment.create(author: user, post: post, text: 'sixth comment')
+
+    visit user_posts_path(user)
+
+    expect(page).to have_content("first comment")
+  end
+
 end
