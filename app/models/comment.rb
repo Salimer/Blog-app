@@ -7,8 +7,8 @@ class Comment < ApplicationRecord
   attribute :text, :text
 
   # Callbacks
-  after_create :update_post_comments_counter
-  after_destroy :update_post_comments_counter
+  after_create :increase_post_comments_counter
+  after_destroy :decrement_post_comments_counter
 
   # Methods
   def update_post_comments_counter
