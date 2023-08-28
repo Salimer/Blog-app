@@ -17,7 +17,7 @@ RSpec.describe 'PostsController', type: :request do
         expect(response).to render_template(:index)
       end
       it 'the response body includes correct placeholder text' do
-        expect(response.body).to include('Posts')
+        expect(response.body).to include('posts')
       end
     end
   end
@@ -35,7 +35,7 @@ RSpec.describe 'PostsController', type: :request do
         expect(response).to render_template(:show)
       end
       it 'the response body includes correct placeholder text' do
-        expect(response.body).to include('Post number')
+        expect(response.body).to include('Post #')
       end
     end
   end
