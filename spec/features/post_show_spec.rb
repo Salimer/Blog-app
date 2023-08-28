@@ -34,4 +34,19 @@ RSpec.feature "Post Show", type: :feature do
     expect(page).to have_content("Comments: 6")
   end
 
+  scenario 'see how many likes a post has' do
+    user = User.create(name: 'Tom')
+    post = Post.create(author: user, title: "first post's title")
+    like1 = Like.create(author: user, post: post)
+    like2 = Like.create(author: user, post: post)
+    like3 = Like.create(author: user, post: post)
+    like4 = Like.create(author: user, post: post)
+    like5 = Like.create(author: user, post: post)
+    like6 = Like.create(author: user, post: post)
+
+    visit user_post_path(user, post)
+
+    expect(page).to have_content("Likes: 6")
+  end
+
 end
