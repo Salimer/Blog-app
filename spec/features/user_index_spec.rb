@@ -22,7 +22,17 @@ RSpec.feature "User Index", type: :feature do
 
     visit users_path
 
-    expect(page).to have_content("2")
-    expect(page).to have_content("1")
+    expect(page).to have_content("3")
+    expect(page).to have_content("0")
+  end
+
+  scenario 'clicking on a user redirects to their show page' do 
+    user = User.create(name: 'Salim')
+
+    visit users_path
+
+    click_link 'Salim'
+
+    expect(page).to have_current_path(user_posts_path(user))
   end
 end
