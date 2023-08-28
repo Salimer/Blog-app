@@ -11,7 +11,8 @@ class Post < ApplicationRecord
   attribute :likes_counter, :integer, default: 0
 
   # Callbacks
-  after_save :update_user_posts_counter
+  after_save :increase_user_posts_counter
+  after_destroy :decrease_user_posts_counter
 
   # Validations
   validates :title, presence: true, length: { maximum: 250 }
