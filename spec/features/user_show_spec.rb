@@ -40,16 +40,49 @@ RSpec.feature "User Show", type: :feature do
   end
 
 
-
-
-
 #   scenario 'clicking on a user redirects to their show page' do 
 #     user = User.create(name: 'Salim')
+#     user1 = User.create(name: 'Tom')
 
-#     visit users_path
+#     visit user_path(user1)
 
-#     click_link 'Salim'
+#     click_link 'Tom'
 
-#     expect(page).to have_current_path(user_posts_path(user))
+#     expect(page).to have_current_path(users)
 #   end
+
+# it 'has a link to the user index page' do
+#     user = User.create(name: 'Salim')
+#     visit user_path(user)
+
+#     click_link '⬅'
+
+#     expect(current_path).to eq(users_path)
+#   end
+
+
+
+
+it 'has a link to the user index page' do
+   user = User.create(name: 'Salim')
+   post1 = Post.create(author: user, title: 'first post', text: 'first text')
+
+   visit user_path(user)
+
+   expect(page).to have_button('See all posts')
+   click_link 'See all posts'
+   expect(current_path).to eq(user_posts_path(user))
+end
+
+# scenario 'clicking a user post redirects to post show page' do
+#     user = User.create(name: 'Alice')
+#     post = Post.create(author: user, title: 'A Post', text: 'Some content')
+
+#     visit user_path(user)
+#     click_link 'A Post' # Adjust this link text to match your actual post's content
+
+#     expect(current_path).to eq(user_post_path(user, post))
+#   end
+
+
 end
