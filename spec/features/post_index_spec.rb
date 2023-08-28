@@ -105,4 +105,16 @@ RSpec.feature "Post Index", type: :feature do
     expect(page).to have_content("Pagination")
   end
 
+  scenario "clicking on a post, it redirects me to that post's show page" do 
+    user = User.create(name: 'Tom')
+    post = Post.create(author: user, title: "first post's title")
+    comment = Comment.create(author: user, post: post, text: 'first comment')
+    like = Like.create(author: user, post: post)
+
+    visit user_posts_path(user)
+
+    click_link "first post's title"
+
+    expect(page).to have_current_path(user_post_path(user, post))
+  end
 end
