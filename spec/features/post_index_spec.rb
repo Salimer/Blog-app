@@ -9,4 +9,16 @@ RSpec.feature "Post Index", type: :feature do
     expect(page).to have_content("Tom")
     expect(page).to have_css("img[alt='Tom']", count: 1)
   end
+
+  scenario 'see the number of posts the user has written.' do
+    user = User.create(name: 'Tom')
+    post1 = Post.create(author: user, title: 'first post')
+    post2 = Post.create(author: user, title: 'second post')
+    post3 = Post.create(author: user, title: 'third post')
+
+    visit user_posts_path(user)
+
+    expect(page).to have_content("3 posts")
+  end
+
 end
