@@ -34,6 +34,10 @@ a {
   border-radius: 5px;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .user-details {
   display: flex;
   justify-content: space-between;
