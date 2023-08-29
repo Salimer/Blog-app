@@ -30,7 +30,13 @@
             </div>
         </a>
     <% end %>
-    <a href="<%= new_user_post_path(@user, @post) %>" class='pagination'>
-        <button id='pagination'>Pagination</button>
-    </a>
+   
+        <nav class="">
+        <ul class="pagination justify-content-center">
+        <% (1..@total_pages).each do |page| %>
+            <li class="page-item"><a class="" href="/users/<%= @author.id %>/posts?page=<%= page %>"><%= page %></a></li>
+        <% end %>
+        </ul>
+    </nav>
+  
 </ul>
