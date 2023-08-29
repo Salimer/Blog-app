@@ -16,6 +16,7 @@
 ul {
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
 
 a {
@@ -32,6 +33,10 @@ a {
   width: 4rem;
   background-color: black;
   border-radius: 5px;
+}
+
+.d-flex {
+  display: flex;
 }
 
 .user-details {
@@ -91,4 +96,8 @@ a {
   border: black solid 2px;
   padding: 0.5rem 0.5rem;
   margin-bottom: 1rem;
+}
+
+.w-100 {
+  width: 100%;
 }

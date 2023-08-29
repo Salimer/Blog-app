@@ -1,8 +1,22 @@
+<% if user.photo.present? %>
+    <div class="user-photo d-flex">
+        <%= image_tag user.photo, alt: user.name, class: 'w-100' %>
+    </div>
+<% else %>
+    <div class="user-photo placeholder">
+        No photo
+    </div>
+<% end %>
 <div class="user-details">
     <div class="user-name">
         <%= user.name %>
     </div>
     <div class=posts-count">
-        <%= pluralize(user.posts.count, 'post') %>
+        <%= user.posts_counter %>
+        <% if user.posts_counter == 1 %>
+        <span>post</span>
+        <% else %>
+        <span>posts</span>
+        <% end %>
     </div>
 </div>

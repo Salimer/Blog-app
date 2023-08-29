@@ -4,7 +4,6 @@
 <ul>
     <a href="<%= user_path(@user) %>">
         <div class="user-box">
-            <%= render partial: 'shared/user_photo', locals: { user: @user } %>
             <%= render partial: 'shared/user_details', locals: { user: @user } %>
         </div>
     </a>
@@ -13,14 +12,16 @@
             <div class="user-post">
                 <div class="post">
                     <h3>Post <%= raw "#" + post.id.to_s %></h3>
-                    <p><%= post.text %></p>
+                    <h2><%= post.title %></h2>
+                    <p><%= truncate(post.text, length: 100) %></p>
                     <div class='post-interactions'>
                         <span>Comments: <%= post.comments_counter %>,</span>
                         <span>Likes: <%= post.likes_counter %></span>
                     </div>
                 </div>
                 <h3>Comments:</h3>
-                <% post.five_most_recent_comments.each do |comment, index| %>
+                <% recent_comments = post.five_most_recent_comments.includes(:author) %>
+                <% recent_comments.each do |comment| %>
                 <div class="post-comments">
                     <span><%= comment.author.name %>:</span>
                     <span><%= comment.text %></span>
@@ -29,7 +30,11 @@
             </div>
         </a>
     <% end %>
-    <a href="<%= new_user_post_path(@user, @post) %>" class='pagination'>
-        <button id='pagination'>Create a new post</button>
-    </a>
+    <nav class="">
+        <ul class="pagination justify-content-center">
+            <% (1..@total_pages).each do |page| %>
+                <li class="page-item"><a class="" href="/users/<%= @author.id %>/posts?page=<%= page %>"><%= page %></a></li>
+            <% end %>
+        </ul>
+    </nav>
 </ul>
