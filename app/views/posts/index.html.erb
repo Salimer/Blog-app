@@ -30,13 +30,11 @@
             </div>
         </a>
     <% end %>
-   
-        <nav class="">
+    <nav class="">
         <ul class="pagination justify-content-center">
-        <% (1..@total_pages).each do |page| %>
-            <li class="page-item"><a class="" href="/users/<%= @author.id %>/posts?page=<%= page %>"><%= page %></a></li>
-        <% end %>
+            <% (1..@total_pages).each do |page| %>
+                <li class="page-item"><a class="" href="/users/<%= @author.id %>/posts?page=<%= page %>"><%= page %></a></li>
+            <% end %>
         </ul>
     </nav>
-  
 </ul>
