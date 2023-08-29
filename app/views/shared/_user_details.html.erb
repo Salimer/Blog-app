@@ -1,6 +1,6 @@
 <% if user.photo.present? %>
-    <div class="user-photo">
-        <%= image_tag user.photo, alt: user.name %>
+    <div class="user-photo d-flex">
+        <%= image_tag user.photo, alt: user.name, class: 'w-100' %>
     </div>
 <% else %>
     <div class="user-photo placeholder">
