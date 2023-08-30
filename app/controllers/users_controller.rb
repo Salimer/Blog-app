@@ -7,17 +7,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    if @user.nil?
-      @users = User.includes(:posts).all
-      render 'index'
-    end
     @three_recent_posts = @user.three_most_recent_posts unless @user.nil?
   end
 
   def new; end
 
   def find_user
-    @user = User.find(params[:id]) unless User.exists?
+    @user = User.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     # Handle the situation when the post is not found
     flash[:alert] = 'User not found, back to users page'
