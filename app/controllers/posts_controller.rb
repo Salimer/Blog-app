@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :find_user, only: %i[index show like unlike]
-  before_action :find_post, only: %i[show like unlike]
+  before_action :find_user, only: %i[create index show like unlike destroy]
+  before_action :find_post, only: %i[show like unlike destroy]
 
   def index
     page = params[:page] || 1
@@ -28,10 +28,18 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     if @post.save
       flash[:notice] = 'Post created successfully.'
-      redirect_to user_path(current_user)
+      redirect_to user_path(@user)
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    @post.destroy
+
+    redirect_to user_posts_path(@user)
   end
 
   def like
