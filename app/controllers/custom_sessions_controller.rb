@@ -5,4 +5,3 @@ class CustomSessionsController < ApplicationController
     redirect_to destroy_user_session_path, notice: 'You have been signed out.'
   end
 end
-  
