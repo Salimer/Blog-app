@@ -20,7 +20,13 @@
   <span><%= comment.author.name %>:</span>
   <span><%= comment.text %></span>
 </div>
+<% if can?(:delete, comment) %>
+  <%= link_to 'Delete', user_post_comment_path(@user, @post, comment), data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+<% end %>
 <% end %>
 <a href="<%= new_user_post_comment_path(@user, @post) %>">
   <button id="back-btn">Add a comment</button>
 </a>
+<% if can?(:delete, @post) %>
+  <%= link_to 'Delete', user_post_path(@user, @post), data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+<% end %>
