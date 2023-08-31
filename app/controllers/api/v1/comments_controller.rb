@@ -17,6 +17,12 @@ class Api::V1::CommentsController < ActionController::API
         end
     end
   
+    private
+
+    def comment_params
+        params.require(:comment).permit(:text)
+    end
+  
     def find_user_and_post
       @user = User.find(params[:user_id])
       @post = @user.posts.find(params[:post_id])
