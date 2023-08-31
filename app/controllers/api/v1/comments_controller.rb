@@ -27,5 +27,4 @@ class Api::V1::CommentsController < ActionController::API
       @user = User.find(params[:user_id])
       @post = @user.posts.find(params[:post_id])
     end
-  end
-  
+end
