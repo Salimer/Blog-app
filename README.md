@@ -28,7 +28,13 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-> This is a blog app based on ruby on rails. This app will feature users, posts, comments, likes.
+The Blog app is a classic example of a blog website. It is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts. Here are the ERD and wireframes for the project.
+
+<p align="center">
+  <img src="https://github.com/Salimer/Blog-app/assets/52242629/be1ac509-b50a-48cf-b8aa-4831171fc8f1" alt="blog_app_erd_v1_1" width="400" style="margin-right: 20px;">
+  <img src="https://github.com/Salimer/Blog-app/assets/52242629/4f6115cb-a3bf-4286-b675-9c343268febe" alt="Screenshot 2023-11-08 at 09 51 43" width="400">
+</p>
+
 
 ## 🛠 Built With <a name="built-with"></a>
 <h2> Tech Stack </h2>
